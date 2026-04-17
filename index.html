@@ -225,7 +225,7 @@
 <!-- APP IFRAME -->
 <iframe
     id="app-frame"
-    src="https://script.google.com/macros/s/AKfycby_xHCmL4G9dvjJoBfLokEyHiuNIVZAdx3uq0Ji4amn355em1Wp9SyC0WzvUSMoMUc0/exec"
+    src="https://script.google.com/macros/s/AKfycbyK925IQLEvdMMw71bM6VmJ8274hb10Q0Bq-IrIRM0o975mpAV506RWQRskLTob9yVI/exec"
     allow="fullscreen"
     title="Campo Don Michele FIORE - Sistema Prenotazioni">
 </iframe>
@@ -235,7 +235,7 @@
 // PWA INSTALL LOGIC
 // =====================================================
 
-const GAS_URL = 'https://script.google.com/macros/s/AKfycby_xHCmL4G9dvjJoBfLokEyHiuNIVZAdx3uq0Ji4amn355em1Wp9SyC0WzvUSMoMUc0/exec';
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbyK925IQLEvdMMw71bM6VmJ8274hb10Q0Bq-IrIRM0o975mpAV506RWQRskLTob9yVI/exec';
 
 let deferredPrompt = null;
 
@@ -287,14 +287,11 @@ document.getElementById('btn-enter').addEventListener('click', () => {
     goToApp();
 });
 
+// Funzione per andare all'app
 function goToApp() {
-    if (isStandalone) {
-        // In modalità app installata, apri in nuova scheda
-        window.open(GAS_URL, '_blank');
-    } else {
-        // In browser normale, redirect diretto
-        window.location.href = GAS_URL;
-    }
+    // Redirect diretto all'URL GAS
+    // (iframe bloccato da Google per policy di sicurezza)
+    window.location.href = GAS_URL;
 }
 </script>
 
