@@ -287,11 +287,14 @@ document.getElementById('btn-enter').addEventListener('click', () => {
     goToApp();
 });
 
-// Funzione per andare all'app
 function goToApp() {
-    // Redirect diretto all'URL GAS
-    // (iframe bloccato da Google per policy di sicurezza)
-    window.location.href = GAS_URL;
+    if (isStandalone) {
+        // In modalità app installata, apri in nuova scheda
+        window.open(GAS_URL, '_blank');
+    } else {
+        // In browser normale, redirect diretto
+        window.location.href = GAS_URL;
+    }
 }
 </script>
 
