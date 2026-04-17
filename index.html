@@ -289,9 +289,13 @@ document.getElementById('btn-enter').addEventListener('click', () => {
 
 // Funzione per andare all'app
 function goToApp() {
-    // Redirect diretto all'URL GAS
-    // (iframe bloccato da Google per policy di sicurezza)
-    window.location.href = GAS_URL;
+    if (isStandalone) {
+        // Siamo già in modalità app — vai diretto
+        window.location.href = GAS_URL;
+    } else {
+        // In browser — redirect nella stessa finestra
+        window.location.href = GAS_URL;
+    }
 }
 </script>
 
