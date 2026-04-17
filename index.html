@@ -287,31 +287,11 @@ document.getElementById('btn-enter').addEventListener('click', () => {
     goToApp();
 });
 
-// Funzione per mostrare l'app
+// Funzione per andare all'app
 function goToApp() {
-    const splash = document.getElementById('splash');
-    const frameLoading = document.getElementById('frame-loading');
-    const frame = document.getElementById('app-frame');
-
-    // Nascondi splash
-    splash.classList.add('hidden');
-    setTimeout(() => { splash.style.display = 'none'; }, 500);
-
-    // Mostra loading
-    frameLoading.classList.add('active');
-
-    // Mostra iframe
-    frame.style.display = 'block';
-
-    // Quando iframe è carico, nascondi loading
-    frame.addEventListener('load', () => {
-        frameLoading.classList.remove('active');
-    });
-
-    // Fallback: nascondi loading dopo 8 secondi
-    setTimeout(() => {
-        frameLoading.classList.remove('active');
-    }, 8000);
+    // Redirect diretto all'URL GAS
+    // (iframe bloccato da Google per policy di sicurezza)
+    window.location.href = GAS_URL;
 }
 </script>
 
